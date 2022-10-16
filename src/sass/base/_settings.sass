@@ -18,3 +18,42 @@ body
   margin: 0 auto
   position: relative
   z-index: 5
+
+.btn-wrap
+  @include flexbox
+  align-items: flex-start
+
+.btn
+  display: block
+  border: 1px solid #000
+  cursor: pointer
+  &-green
+    background: $color-green
+    border-color: $color-green
+    color: #fff
+    font-size: 14px
+    @include flexbox
+    align-items: center
+    justify-content: center
+    font-weight: 700
+    text-transform: uppercase
+    &::after
+      content: ''
+      width: 18px
+      height: 14px
+      background: url(../img/svg/btn-arrow.svg) no-repeat
+      display: block
+      margin-left: 10px
+
+.btn-hero
+  padding: 20px 60px
+  font-size: 18px
+
+.btn-consult
+  padding: 16px 60px
+  font-size: 16px
+
+.title-md
+  font-size: 32px
+  font-weight: 700
+  line-height: 1

@@ -1,0 +1,58 @@
+.hero
+  height: 900px
+  padding-top: 230px
+  color: #fff
+  background: url(../img/hero-bg.jpg) no-repeat top center
+  background-size: cover
+  position: relative
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0) 34.22%)
+  &-title
+    font-size: 96px
+    font-weight: 700
+    line-height: 1
+    max-width: 600px
+  .btn-wrap
+    margin-top: 60px
+
+  &-consult
+    background: #453126
+    border: 35px solid #fff
+    padding: 40px 50px
+    margin-top: 130px
+    .title-md
+      max-width: 580px
+    &__form
+      @include flexbox
+      align-items: center
+      margin-top: 30px
+    &__file
+      display: block
+      width: 55px
+      height: 55px
+      border: 1px solid #fff
+      margin-right: 10px
+      background: url(../img/svg/file-white.svg) no-repeat center
+      input
+        @include visually-hidden
+    &__input
+      height: 55px
+      flex: 1
+      background: #fff
+      padding: 0 20px
+      font-size: 14px
+      font-weight: 700
+      margin: 0 10px
+      @include placeholder
+        color: #bdbdbd
+    &__or
+      font-size: 14px
+      font-weight: 700
+    .btn-consult
+      margin-left: 10px
