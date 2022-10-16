@@ -1,0 +1,67 @@
+.header
+  padding: 20px 0
+  border-bottom: 1px solid rgba(31, 23, 18, .1)
+  .container
+    @include flexbox
+    align-items: center
+    justify-content: space-between
+  &-logo
+    display: block
+    width: 160px
+    height: 50px
+    background: url(../img/svg/logo-black.svg) no-repeat
+  &-nav
+    @include flexbox
+    align-items: center
+    li
+      margin-right: 80px
+      &:last-child
+        margin-right: 0
+      a
+        font-size: 18px
+        font-weight: 700
+  &-phone
+    font-size: 18px
+    font-weight: 700
+  &-buttons
+    @include flexbox
+    align-items: center
+    &__item
+      display: block
+      width: 50px
+      height: 50px
+      background: rgba(0,0,0,.5)
+      border: 1px solid rgba(255,255,255,.5)
+      margin-left: 10px
+      &:first-child
+        margin-left: 0
+      &::before
+        content: ''
+        width: 48px
+        height: 48px
+        display: block
+        background-repeat: no-repeat
+        background-position: center center
+    &__search
+      background: transparent
+      border-color: transparent
+      &::before
+        background-image: url(../img/svg/search-black.svg)
+    &__wishlist
+      background: transparent
+      border-color: transparent
+      &::before
+        background-image: url(../img/svg/wishlist-black.svg)
+    &__cart
+      &::before
+        background-image: url(../img/svg/cart-white.svg)
+
+  &-white
+    color: #fff
+    border-color: rgba(255,255,255,.1)
+    .header-logo
+      background-image: url(../img/svg/logo-white.svg)
+    .header-buttons__search::before
+      background-image: url(../img/svg/search-white.svg)
+    .header-buttons__wishlist::before
+      background-image: url(../img/svg/wishlist-white.svg)
