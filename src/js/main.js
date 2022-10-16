@@ -32,3 +32,14 @@ const maskPhone = () => {
 };
 
 maskPhone();
+
+const promoSlider = new Swiper('.promo-slider', {
+  pagination: {
+    el: '.promo-count',
+    type: 'fraction',
+  },
+  navigation: {
+    nextEl: '.promo-next',
+    prevEl: '.promo-prev',
+  },
+});
