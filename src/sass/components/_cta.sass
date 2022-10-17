@@ -1,0 +1,57 @@
+.cta
+  padding-top: 80px
+  &-row
+    @include flexbox
+    align-items: flex-start
+  &-content
+    max-width: 600px
+    width: 100%
+    margin-left: auto
+  h3
+    font-size: 24px
+    font-weight: 700
+    margin-top: 15px
+    max-width: 410px
+    margin-bottom: 40px
+  .title-lg
+    max-width: 510px
+  h4
+    font-size: 18px
+    font-weight: 700
+    margin-bottom: 20px
+  .btn
+    padding: 17px 40px
+  .cta-form
+    max-width: 400px
+    .input
+      margin-bottom: 20px
+  &-img
+    width: calc(100% - 600px)
+    img
+      max-width: initial
+      float: right
+      position: relative
+      right: 80px
+  &-file
+    margin-bottom: 40px
+    h5
+      font-size: 14px
+      line-height: 1
+      font-weight: 700
+      margin-bottom: 15px
+    input
+      @include visually-hidden
+    label
+      display: block
+      height: 40px
+      width: 180px
+      @include flexbox
+      align-items: center
+      justify-content: center
+      border: 1px solid $color-black
+      cursor: pointer
+      p
+        font-size: 14px
+        font-weight: 700
+        margin-left: 10px
+        border-bottom: 1px solid $color-black
