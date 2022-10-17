@@ -43,3 +43,40 @@ const promoSlider = new Swiper('.promo-slider', {
     prevEl: '.promo-prev',
   },
 });
+
+const specialSlider = new Swiper('.special-slider', {
+  slidesPerView: 3,
+  slidesPerGroup: 3,
+  spaceBetween: 20,
+  pagination: {
+    el: '.special-count',
+    type: 'fraction',
+  },
+  navigation: {
+    nextEl: '.special-next',
+    prevEl: '.special-prev',
+  },
+  noSwiping: true,
+  noSwipingClass: 'swiper-slide',
+});
+
+const triplets = (str) => {
+  return str.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1\u202f');
+};
+
+const tripletsString = document.querySelectorAll('.triplets');
+tripletsString.forEach((string) => {
+  string.innerHTML = triplets(string.innerHTML);
+});
+
+const catalogItem = document.querySelectorAll('.catalog-item');
+catalogItem.forEach((item) => {
+  // wishlist
+  const wishlistIcon = item.querySelector('.catalog-item__wishlist');
+  wishlistIcon.addEventListener('click', (el) => el.target.classList.toggle('active'));
+
+  // form focus
+  const calc = item.querySelector('.catalog-item__calc');
+  calc.addEventListener('focus', () => item.classList.add('focus'), true);
+  calc.addEventListener('blur', () => item.classList.remove('focus'), true);
+});

@@ -27,6 +27,7 @@ body
   display: block
   border: 1px solid #000
   cursor: pointer
+  transition: .2s
   &-green
     background: $color-green
     border-color: $color-green
@@ -42,6 +43,23 @@ body
       width: 18px
       height: 14px
       background: url(../img/svg/btn-arrow.svg) no-repeat
+      display: block
+      margin-left: 10px
+  &-outline
+    background: #fff
+    border-color: $color-brown
+    color: $color-brown
+    font-size: 14px
+    @include flexbox
+    align-items: center
+    justify-content: center
+    font-weight: 700
+    text-transform: uppercase
+    &::after
+      content: ''
+      width: 18px
+      height: 14px
+      background: url(../img/svg/btn-arrow-brown.svg) no-repeat
       display: block
       margin-left: 10px
 
