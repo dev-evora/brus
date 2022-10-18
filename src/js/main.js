@@ -80,3 +80,8 @@ catalogItem.forEach((item) => {
   calc.addEventListener('focus', () => item.classList.add('focus'), true);
   calc.addEventListener('blur', () => item.classList.remove('focus'), true);
 });
+
+$('.catalog-section__list-open, .catalog-section__list-close').click(function () {
+  $('.catalog-section__list-content').slideToggle(300);
+  $('.catalog-section__list-open').slideToggle(300);
+});

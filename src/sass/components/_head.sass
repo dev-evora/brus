@@ -21,3 +21,23 @@
   &-subtitle
     max-width: 600px
     margin-top: 15px
+  &-bg
+    padding-top: 91px
+    background-size: cover
+    background-repeat: no-repeat
+    background-position: center
+    color: #fff
+    position: relative
+    padding-bottom: 80px
+    &::before
+      content: ''
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.61) 0%, rgba(0, 0, 0, 0) 34.22%)
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+    .head-breadcrumbs li
+      color: #fff
+      &:first-child
+        color: #c5c5c5

@@ -1,0 +1,107 @@
+{% extends 'components/_layout.html' %}
+{% set site_title = 'Каталог подраздел' %}
+{% set header_white = true %}
+
+{% block content %}
+
+<section class="head head-bg" style="background-image:url(img/section-bg.jpg);">
+  <div class="container">
+    <ul class="head-breadcrumbs">
+      <li><a href="#">Главная</a></li>
+      <li><a href="#">Каталог</a></li>
+      <li><a href="#">Пиломатериалы естественной влажности</a></li>
+    </ul>
+    <h2 class="title-lg head-title">Пиломатериалы естественной влажности</h2>
+    <h3 class="title-sm head-subtitle">Описание раздела, описание раздела Описание раздела, описание раздела Описание раздела, описание разделаОписание раздела, описание разделаОписание раздела</h3>
+  </div>
+</section>
+
+<section class="catalog-section">
+  <div class="container">
+    <h2 class="title-lg">Подразделы:</h2>
+    <div class="catalog-section__list">
+      <div class="catalog-section__list-open">Разверните, чтобы увидеть</div>
+      <div class="catalog-section__list-content">
+        <div class="catalog-section__list-close"></div>
+        <ul>
+          <li><a href="#">Доска строганая</a></li>
+          <li><a href="#">Дюймовка строганая</a></li>
+          <li><a href="#">Имитация бруса</a></li>
+          <li><a href="#">Планкен</a></li>
+          <li><a href="#">Террасная доска</a></li>
+          <li><a href="#">Палубная доска</a></li>
+          <li><a href="#">Имитация бревна</a></li>
+          <li><a href="#">Строганые брусок и рейка</a></li>
+          <li><a href="#">Скандинавская доска</a></li>
+          <li><a href="#">Брус строганый</a></li>
+        </ul>
+      </div>
+    </div>
+    <form class="catalog-section__filter">
+      <select class="catalog-section__filter-select">
+        <option disabled selected>Сорт</option>
+        <option>Вариант 1</option>
+        <option>Вариант 2</option>
+        <option>Вариант 3</option>
+      </select>
+      <select class="catalog-section__filter-select">
+        <option disabled selected>Древесина</option>
+        <option>Вариант 1</option>
+        <option>Вариант 2</option>
+        <option>Вариант 3</option>
+      </select>
+      <select class="catalog-section__filter-select">
+        <option disabled selected>Длина, мм</option>
+        <option>Вариант 1</option>
+        <option>Вариант 2</option>
+        <option>Вариант 3</option>
+      </select>
+      <select class="catalog-section__filter-select">
+        <option disabled selected>Толщина, м</option>
+        <option>Вариант 1</option>
+        <option>Вариант 2</option>
+        <option>Вариант 3</option>
+      </select>
+      <select class="catalog-section__filter-select">
+        <option disabled selected>Ширина, м</option>
+        <option>Вариант 1</option>
+        <option>Вариант 2</option>
+        <option>Вариант 3</option>
+      </select>
+      <button class="btn btn-outline"><p>Применить фильтр</p></button>
+      <button type="reset" class="catalog-section__filter-clear"></button>
+    </form>
+    <div class="catalog-section__subfilter">
+      <div class="catalog-section__grid">
+        <div class="catalog-section__grid-tile active"></div>
+        <div class="catalog-section__grid-simple"></div>
+      </div>
+      <div class="catalog-section__sort">
+        <b>Сортировать по:</b>
+        <select>
+          <option>Цене - сначала недорогие</option>
+          <option>Цене - сначала дорогие</option>
+          <option>Алфавиту А-Я</option>
+          <option>Алфавиту Я-А</option>
+        </select>
+        </div>
+    </div>
+    <div class="catalog-section__result">
+      {% include 'components/catalog-item.html' %}
+      {% include 'components/catalog-item.html' %}
+      {% include 'components/catalog-item.html' %}
+      {% include 'components/catalog-item.html' %}
+      {% include 'components/catalog-item.html' %}
+      {% include 'components/catalog-item.html' %}
+      {% include 'components/promo-slider.html' %}
+      {% include 'components/catalog-item.html' %}
+      {% include 'components/catalog-item.html' %}
+      {% include 'components/catalog-item.html' %}
+      {% include 'components/catalog-item.html' %}
+      {% include 'components/catalog-item.html' %}
+      {% include 'components/catalog-item.html' %}
+    </div>
+  </div>
+</section>
+
+{% endblock %}
