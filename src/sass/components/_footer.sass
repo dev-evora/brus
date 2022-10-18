@@ -1,0 +1,49 @@
+.footer
+  background: #3d2e25
+  color: #fff
+  margin-top: 80px
+  padding: 50px 0
+  .container
+    @include flexbox
+    align-items: flex-start
+    justify-content: space-between
+  &-logo
+    display: block
+    width: 160px
+    height: 50px
+    background: url(../img/svg/logo-white.svg) no-repeat
+  &-time
+    font-size: 18px
+    font-weight: 700
+    margin-top: 40px
+  &-contact
+    max-width: 240px
+    li
+      @include flexbox
+      align-items: flex-start
+      margin-top: 20px
+      &:first-child
+        margin-top: 0
+      p
+        width: calc(100% - 36px)
+        margin-left: auto
+        font-size: 14px
+        font-weight: 700
+      img
+        margin-top: 3px
+      &:first-child a
+        font-size: 18px
+  &-nav
+    font-size: 14px
+    font-weight: 700
+    li
+      margin-top: 10px
+      &:first-child
+        margin-top: 0
+
+  &-copyright
+    width: 100%
+    margin-top: 40px
+    font-size: 14px
+    span
+      border-bottom: 1px solid #fff
