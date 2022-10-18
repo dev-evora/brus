@@ -1,0 +1,23 @@
+.head
+  &-breadcrumbs
+    padding: 30px 0
+    display: block
+    font-size: 14px
+    line-height: 1
+    li
+      display: inline
+      color: $color-brown
+      &:first-child
+        color: #c5c5c5
+        &::after
+          color: #c5c5c5
+      &::after
+        content: ">"
+        padding-left: 4px
+      &:last-child::after
+        display: none
+  &-title
+    margin-top: -15px
+  &-subtitle
+    max-width: 600px
+    margin-top: 15px
