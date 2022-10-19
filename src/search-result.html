@@ -1,0 +1,38 @@
+{% extends 'components/_layout.html' %}
+{% set site_title = 'Результат поиска' %}
+{% set header_white = false %}
+
+{% block content %}
+
+<section class="head">
+  <div class="container">
+    <ul class="head-breadcrumbs">
+      <li><a href="#">Главная</a></li>
+      <li><a href="#">Результат поиска</a></li>
+    </ul>
+    <h2 class="title-lg head-title">Результат поиска</h2>
+  </div>
+</section>
+
+<section class="search">
+  <div class="container">
+    <div class="search-form">
+      <h3>Вы искали:</h3>
+      <form action="#">
+        <input type="text" value="Доставка" class="input" placeholder="Например, дерево" />
+        <button class="btn btn-green"><p>Поиск</p></button>
+      </form>
+    </div>
+    <h2 class="title-md">Результаты:</h2>
+    <div class="catalog-section__result search-result">
+      {% include 'components/catalog-item.html' %}
+      {% include 'components/catalog-item.html' %}
+      {% include 'components/catalog-item.html' %}
+      {% include 'components/catalog-item.html' %}
+      {% include 'components/catalog-item.html' %}
+      {% include 'components/catalog-item.html' %}
+    </div>
+  </div>
+</section>
+
+{% endblock %}

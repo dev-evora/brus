@@ -1,0 +1,29 @@
+{% extends 'components/_layout.html' %}
+{% set site_title = 'Поиск' %}
+{% set header_white = false %}
+
+{% block content %}
+
+<section class="head">
+  <div class="container">
+    <ul class="head-breadcrumbs">
+      <li><a href="#">Главная</a></li>
+      <li><a href="#">Поиск</a></li>
+    </ul>
+    <h2 class="title-lg head-title">Поиск</h2>
+  </div>
+</section>
+
+<section class="search">
+  <div class="container">
+    <div class="search-form">
+      <h3>Что будем искать?</h3>
+      <form action="#">
+        <input type="text" class="input" placeholder="Например, дерево" />
+        <button class="btn btn-green"><p>Поиск</p></button>
+      </form>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
