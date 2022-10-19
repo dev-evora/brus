@@ -1,0 +1,30 @@
+{% extends 'components/_layout.html' %}
+{% set site_title = 'Избранное' %}
+{% set header_white = false %}
+
+{% block content %}
+
+<section class="head">
+  <div class="container">
+    <ul class="head-breadcrumbs">
+      <li><a href="#">Главная</a></li>
+      <li><a href="#">Избранное</a></li>
+    </ul>
+    <h2 class="title-lg head-title">Ваше избранное</h2>
+  </div>
+</section>
+
+<section class="wishlist">
+  <div class="container">
+    <div class="catalog-section__result">
+      {% include 'components/catalog-item.html' %}
+      {% include 'components/catalog-item.html' %}
+      {% include 'components/catalog-item.html' %}
+      {% include 'components/catalog-item.html' %}
+      {% include 'components/catalog-item.html' %}
+      {% include 'components/catalog-item.html' %}
+    </div>
+  </div>
+</section>
+
+{% endblock %}
