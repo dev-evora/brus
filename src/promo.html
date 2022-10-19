@@ -1,0 +1,28 @@
+{% extends 'components/_layout.html' %}
+{% set site_title = 'Акции' %}
+{% set header_white = true %}
+
+{% block content %}
+
+<section class="head head-bg" style="background-image:url(img/promo-bg.jpg);">
+  <div class="container">
+    <ul class="head-breadcrumbs">
+      <li><a href="#">Главная</a></li>
+      <li><a href="#">Акции</a></li>
+    </ul>
+    <h2 class="title-lg head-title">Акции</h2>
+    <h3 class="title-sm head-subtitle">Описание раздела, описание раздела Описание раздела, описание раздела Описание раздела, описание разделаОписание раздела, описание разделаОписание раздела</h3>
+  </div>
+</section>
+
+<section class="promo">
+  <div class="container">
+    <div class="promo-list">
+      {% include 'components/promo-item.html' %}
+      {% include 'components/promo-item.html' %}
+      {% include 'components/promo-item.html' %}
+    </div>
+  </div>
+</section>
+
+{% endblock %}
