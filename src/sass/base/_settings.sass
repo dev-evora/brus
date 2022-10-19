@@ -125,3 +125,24 @@ body
 
 .swiper-notification
   display: none !important
+
+.pagination
+  @include flexbox
+  align-items: center
+  font-size: 14px
+  line-height: 1
+  font-weight: 700
+  li
+    margin-right: 10px
+    &:last-child
+      margin-right: 0
+    &.active
+      color: #00aead
+  &-prev, &-next
+    a
+      display: block
+      width: 6px
+      height: 8px
+      background: url(../img/svg/pagination-arrow.svg) no-repeat
+  &-next a
+    transform: rotate(180deg)

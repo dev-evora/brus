@@ -1,0 +1,64 @@
+.price
+  padding-top: 80px
+  &-section
+    margin-top: 40px
+  &-table
+    margin-top: 20px
+    &__content
+      border: 1px solid #e3e3e3
+    &__section
+      font-size: 18px
+      font-weight: 700
+      background: #e3e3e3
+      padding: 8px 20px 10px
+    &__row
+      border-bottom: 1px solid #e3e3e3
+      @include flexbox
+      &:last-child
+        border-bottom: 0
+      &:first-child .price-table__col
+        border-color: transparent
+        &:first-child
+          font-size: 18px
+          padding: 8px 20px 10px
+    &__col
+      padding: 8px 20px 10px
+      font-size: 18px
+      font-weight: 700
+      width: 150px
+      border-left: 1px solid#e3e3e3
+      &:first-child
+        flex: 1
+        width: initial
+        border-left: 0
+        font-size: 14px
+        padding: 10px 20px 12px
+  &-download
+    @include flexbox
+    align-items: center
+    a
+      @include flexbox
+      align-items: center
+    img
+      margin-right: 10px
+    p
+      font-size: 14px
+      border-bottom: 1px solid $color-black
+      font-weight: 700
+  &-footer
+    @include flexbox
+    align-items: center
+    margin-top: 40px
+    &__col
+      width: calc(100% / 3)
+      @include flexbox
+      align-items: center
+      &:nth-child(2)
+        justify-content: center
+      &:nth-child(3)
+        justify-content: flex-end
+  &-more
+    font-weight: 700
+    border-bottom: 1px solid $color-black
+    font-size: 14px
+    cursor: pointer
