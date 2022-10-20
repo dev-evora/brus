@@ -82,17 +82,17 @@ tripletsString.forEach((string) => {
   string.innerHTML = triplets(string.innerHTML);
 });
 
-const catalogItem = document.querySelectorAll('.catalog-item');
-catalogItem.forEach((item) => {
-  // wishlist
-  const wishlistIcon = item.querySelector('.catalog-item__wishlist');
-  wishlistIcon.addEventListener('click', (el) => el.target.classList.toggle('active'));
+// const catalogItem = document.querySelectorAll('.catalog-item');
+// catalogItem.forEach((item) => {
+//   // wishlist
+//   const wishlistIcon = item.querySelector('.catalog-item__wishlist');
+//   wishlistIcon.addEventListener('click', (el) => el.target.classList.toggle('active'));
 
-  // form focus
-  const calc = item.querySelector('.catalog-item__calc');
-  calc.addEventListener('focus', () => item.classList.add('focus'), true);
-  calc.addEventListener('blur', () => item.classList.remove('focus'), true);
-});
+//   // form focus
+//   const calc = item.querySelector('.catalog-item__calc');
+//   calc.addEventListener('focus', () => item.classList.add('focus'), true);
+//   calc.addEventListener('blur', () => item.classList.remove('focus'), true);
+// });
 
 $('.catalog-section__list-open, .catalog-section__list-close').click(function () {
   $('.catalog-section__list-content').slideToggle(300);
