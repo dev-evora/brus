@@ -3,7 +3,7 @@
     border: 1px solid $color-gray
     padding: 20px
     background: #fff
-    transition: .2s
+    // transition: .2s
     position: relative
     @include flexbox
     align-items: flex-start
@@ -166,7 +166,7 @@
       opacity: 0
       max-height: 0
       overflow: hidden
-      transition: .2s
+      // transition: .2s
       b
         font-size: 24px
         margin-left: 10px
@@ -320,3 +320,57 @@
         font-size: 14px
         text-decoration: underline
         font-weight: 700
+
+    &__simple
+      .catalog-item
+        width: calc(100% - 20px)
+        flex-direction: row
+        // align-items: flex-end
+      .catalog-item__buttons
+        width: 160px
+        margin-left: 30px
+        margin-top: 23px
+        .btn
+          width: 100%
+          padding: 9px 0
+      .catalog-item__info
+        margin-top: 0
+        max-width: 300px
+        width: 100%
+        order: -1
+      .catalog-item__top
+        max-width: 100px
+        width: 100%
+        margin-left: 30px
+        margin-top: 33px
+      .catalog-item__title
+        margin-top: 5px
+        -webkit-line-clamp: 1
+      .catalog-item__sort
+        margin-left: 0
+        margin-top: 5px
+      .catalog-item__price
+        max-width: 170px
+        margin-top: 13px
+        margin-left: 30px
+        margin-bottom: 0
+        li
+          margin-right: 0
+          width: calc(100% / 2)
+      .catalog-item__calc
+        flex: 1
+        margin-top: 33px
+        height: 87px
+      .catalog-item__wishlist
+        top: 20px
+
+    &__footer
+      @include flexbox
+      align-items: center
+      justify-content: center
+      margin-top: 40px
+    &__more
+      font-weight: 700
+      border-bottom: 1px solid $color-black
+      font-size: 14px
+      cursor: pointer

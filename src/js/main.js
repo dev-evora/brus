@@ -108,3 +108,14 @@ $('.item-spec__tabs li').click(function () {
   $('.item-spec__tab').removeClass('active');
   $('.item-spec__tab[data-id=' + id + ']').addClass('active');
 });
+
+$('.catalog-section__grid div').click(function () {
+  $('.catalog-section__grid div').removeClass('active');
+  $(this).addClass('active');
+
+  if ($('.catalog-section__grid-simple').hasClass('active')) {
+    $('.catalog-section__result').addClass('catalog-section__simple');
+  } else {
+    $('.catalog-section__result').removeClass('catalog-section__simple');
+  }
+});
