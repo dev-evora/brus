@@ -1,0 +1,201 @@
+{% extends 'components/_layout.html' %}
+{% set site_title = 'Карточка товара' %}
+{% set header_white = false %}
+
+{% block content %}
+
+<section class="head">
+  <div class="container">
+    <ul class="head-breadcrumbs">
+      <li><a href="#">Главная</a></li>
+      <li><a href="#">Каталог</a></li>
+      <li><a href="#">Пиломатериалы естественной влажности</a></li>
+      <li><a href="#">Имитация (имитатор) бруса</a></li>
+    </ul>
+  </div>
+</section>
+
+<section class="item">
+  <div class="container">
+    <div class="item-card">
+      <div class="item-photo"><img src="img/item-photo.jpg" alt=""></div>
+      <div class="item-info">
+        <div class="catalog-item__wishlist"></div>
+        <div class="catalog-item__top">
+          <div class="catalog-item__action">Акция</div>
+          <div class="catalog-item__sort">Сорт АВ</div>
+        </div>
+        <div class="catalog-item__info">
+          <div class="catalog-item__size">20<span>х</span>195<span>х</span>3050</div>
+          <a href="#" class="catalog-item__title">Имитация (имитатор) бруса</a>
+          <div class="catalog-item__subtitle">Карельский профиль</div>
+          <div class="catalog-item__desc">Полезная ширина 177</div>
+        </div>
+        <ul class="catalog-item__price">
+          <li>
+            <b><span class="triplets">3229</span>₽</b>
+            <p>за м.кв</p>
+          </li>
+          <li>
+            <b><span class="triplets">30229</span>₽</b>
+            <p>за м.куб.</p>
+          </li>
+          <li>
+            <b><span class="triplets">129</span>₽</b>
+            <p>за шт.</p>
+          </li>
+        </ul>
+        <div class="item-calc">
+          <div class="catalog-item__calc">
+            <h4>Посчитать, сколько нужно:</h4>
+            <label class="catalog-item__calc-label">
+              <input type="number" placeholder="?" />
+              <p>м.кв.</p>
+            </label>
+            <div class="catalog-item__calc-equals">=</div>
+            <label class="catalog-item__calc-label">
+              <input type="number" placeholder="?" />
+              <p>м.куб.</p>
+            </label>
+            <div class="catalog-item__calc-equals">=</div>
+            <label class="catalog-item__calc-label">
+              <input type="number" placeholder="?" />
+              <p>пог.м.</p>
+            </label>
+            <div class="catalog-item__calc-equals">=</div>
+            <label class="catalog-item__calc-label">
+              <input type="number" placeholder="?" />
+              <p>шт.</p>
+            </label>
+          </div>
+          <div class="item-calc__total"><p><b>За позицию:</b><span>15 009 ₽</span></p></div>
+        </div>
+        <a href="#" class="btn btn-green"><p>В смету</p></a>
+      </div>
+    </div>
+    <div class="item-spec">
+      <ul class="item-spec__tabs">
+        <li data-id="1" class="active">Характеристики</li>
+        <li data-id="2">Описание</li>
+        <li data-id="3">Доставка</li>
+      </ul>
+      <div class="item-spec__tab active" data-id="1">
+        <div class="item-spec__row">
+          <ul class="item-spec__list">
+            <li><p>в 1 куб. м.: <b>N шт. | N м.кв. | N м.пог.</b></p></li>
+            <li><p>в 1 шт: <b>N м. куб. | N м.кв. | N м.пог.</b></p></li>
+            <li><p>Вид товара: <b>Стройматериалы</b></p></li>
+            <li><p>Тип товара: <b>Пиломатериалы</b></p></li>
+          </ul>
+          <ul class="item-spec__list">
+            <li><p>Тип пиломатериала: <b>Доска</b></p></li>
+            <li><p>Длина, мм: <b>6050</b></p></li>
+            <li><p>Вид древесины: <b>Ель</b></p></li>
+            <li><p>Сорт: <b>1 (A)</b></p></li>
+          </ul>
+          <ul class="item-spec__list">
+            <li><p>Степень влажности: <b>Сухая</b></p></li>
+            <li><p>Обработка: <b>Строгание, Камерная сушка</b></p></li>
+            <li><p>Назначение: <b>Баня, Дом, Забор, Лестница, Пол, Потолок, Стена, Терраса, Фасад</b></p></li>
+            <li><p>Состояние: <b>Новое</b></p></li>
+          </ul>
+        </div>
+      </div>
+      <div class="item-spec__tab" data-id="2">
+        <div class="item-spec__text">
+          <p>Предлагаем купить дюймовку строганую - Планкен. Доска имеет завальцовку с 2 или 4 углов (R3). Предназначена для отделки фасадов зданий, внутренних стен, подшивки кровли и навесов. Идеальна для забора.</p>
+          <p>- 10-14% влажности (Камерная сушка).</p>
+        </div>
+      </div>
+      <div class="item-spec__tab" data-id="3">
+        <div class="item-spec__text">
+          <p>Все цены указаны за штуку или 1 куб Гладкой отделочной доски "дюймовки" (Планкен) стандартных размеров, при оплате наличными или переводом.</p>
+          <p>Возможна оплата по безналу (без НДС).</p>
+          <p>При продаже с НДС +20% к стоимости.</p>
+          <p>Другие товары и цены смотрите в объявлениях компании ДоскиБрус.</p>
+          <p>- Собственный склад в Гатчинском районе (п. Новый Свет), более 500 м3 всегда в наличии, у нас вы можете приобрести пиломатериалы высокого качества, каждая партия доски проходит тщательную сортировку.</p>
+          <p>- Осуществляем доставку собственными манипуляторами по Санкт Петербургу и Л.О в день обращения.</p>
+          <p>- Индивидуальные условиями для постоянных клиентов, строительных компаний и бригад.</p>
+          <p>- Предоставляем скидки на объемы (от 10м3).</p>
+          <p>- Весь пиломатериал вы можете осмотреть перед покупкой.</p>
+          <p>- Осуществляем напил редких размеров на заказ</p>
+          <p>На остальные вопросы мы с радостью вам ответим по телефону!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="benefit">
+  <div class="container">
+    <h2 class="title-lg">Почему стоит выбрать нас?</h2>
+    <div class="benefit-slider">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="benefit-item">
+            <img src="img/benefit-item-1.jpg" alt="" class="benefit-item__img">
+            <div class="benefit-item__text">
+              <h3>Мы контролируем качество нашей продукции</h3>
+              <p>Дерево - материал капризный, и при долгом хранении имеется большой риск деформации. Мы можем избежать этого благодаря тому, что не храним большие объемы пиломатериалов на складах. </p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="benefit-item">
+            <img src="img/benefit-item-2.jpg" alt="" class="benefit-item__img">
+            <div class="benefit-item__text">
+              <h3>Мы не зависим от поставщиков</h3>
+              <p>У нас собственное производство и склады, а это значит, что мы сами устанавливаем условия продажи и доставки и лучше контролируем качество и сроки.</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="benefit-item">
+            <img src="img/benefit-item-3.jpg" alt="" class="benefit-item__img">
+            <div class="benefit-item__text">
+              <h3>Чего-то не хватило? Мы поможем!</h3>
+              <p>Все позиции всегда присутствуют на складе в небольшом количестве. Вы не потеряетен время из-за ошибок в расчетах.</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="benefit-item">
+            <img src="img/benefit-item-4.jpg" alt="" class="benefit-item__img">
+            <div class="benefit-item__text">
+              <h3>Квалифицированные консультанты</h3>
+              <p>Наши специалисты всегда готовы проконсультировать и помочь определиться с выбором и расчетами.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="control benefit-control">
+        <div class="control-arrow benefit-prev"></div>
+        <div class="control-count benefit-count"></div>
+        <div class="control-arrow benefit-next"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="special">
+  <div class="container">
+    <h2 class="title-lg">Популярные товары:</h2>
+    <div class="special-slider">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">{% include 'components/catalog-item.html' %}</div>
+        <div class="swiper-slide">{% include 'components/catalog-item.html' %}</div>
+        <div class="swiper-slide">{% include 'components/catalog-item.html' %}</div>
+        <div class="swiper-slide">{% include 'components/catalog-item.html' %}</div>
+        <div class="swiper-slide">{% include 'components/catalog-item.html' %}</div>
+        <div class="swiper-slide">{% include 'components/catalog-item.html' %}</div>
+      </div>
+      <div class="control special-control">
+        <div class="control-arrow special-prev"></div>
+        <div class="control-count special-count"></div>
+        <div class="control-arrow special-next"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

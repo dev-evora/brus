@@ -4,9 +4,10 @@
     @include flexbox
     align-items: flex-start
     margin: 0 -10px
+    .benefit-item
+      margin: 30px 10px 0
+      width: calc(100% / 2 - 20px)
   &-item
-    margin: 30px 10px 0
-    width: calc(100% / 2 - 20px)
     height: 350px
     position: relative
     &::before
@@ -42,3 +43,9 @@
         line-height: 1
         margin-top: 15px
         font-weight: 700
+  &-slider
+    overflow: hidden
+    margin-top: 30px
+  &-control
+    justify-content: center
+    margin-top: 30px

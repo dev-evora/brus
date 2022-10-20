@@ -60,6 +60,19 @@ const specialSlider = new Swiper('.special-slider', {
   noSwipingClass: 'swiper-slide',
 });
 
+const benefitSlider = new Swiper('.benefit-slider', {
+  slidesPerView: 2,
+  spaceBetween: 20,
+  pagination: {
+    el: '.benefit-count',
+    type: 'fraction',
+  },
+  navigation: {
+    nextEl: '.benefit-next',
+    prevEl: '.benefit-prev',
+  },
+});
+
 const triplets = (str) => {
   return str.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1\u202f');
 };
@@ -84,4 +97,14 @@ catalogItem.forEach((item) => {
 $('.catalog-section__list-open, .catalog-section__list-close').click(function () {
   $('.catalog-section__list-content').slideToggle(300);
   $('.catalog-section__list-open').slideToggle(300);
+});
+
+$('.item-spec__tabs li').click(function () {
+  const id = $(this).attr('data-id');
+
+  $('.item-spec__tabs li').removeClass('active');
+  $(this).addClass('active');
+
+  $('.item-spec__tab').removeClass('active');
+  $('.item-spec__tab[data-id=' + id + ']').addClass('active');
 });
