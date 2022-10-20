@@ -1,0 +1,58 @@
+{% extends 'components/_layout.html' %}
+{% set site_title = 'Контакты' %}
+{% set header_white = false %}
+
+{% block content %}
+
+<section class="head">
+  <div class="container">
+    <ul class="head-breadcrumbs">
+      <li><a href="#">Главная</a></li>
+      <li><a href="#">Контакты</a></li>
+    </ul>
+    <h2 class="title-lg head-title">Контакты</h2>
+  </div>
+</section>
+
+<section class="contact">
+  <div class="container">
+    <div class="contact-row">
+      <ul class="contact-connect">
+        <li><b>Контактный телефон:</b><a href="tel:8 (812) 123-35-39" class="contact-connect__phone">8 (812) 123-35-39</a></li>
+        <li><b>E-mail</b><a href="mailto:Mail@mail.ru">Mail@mail.ru</a></li>
+      </ul>
+      <ul class="contact-address">
+        <li>
+          <b>Адрес-1</b>
+          <p>Ленинградская область, Гатчинский р-н, Новосветское сельское поселение, пос. Новый Свет, 113В</p>
+        </li>
+        <li>
+          <b>Адрес-1</b>
+          <p>Ленинградская область, Гатчинский р-н, Новосветское сельское поселение, пос. Новый Свет, 113В</p>
+        </li>
+        <li>
+          <b>Адрес-1</b>
+          <p>Ленинградская область, Гатчинский р-н, Новосветское сельское поселение, пос. Новый Свет, 113В</p>
+        </li>
+      </ul>
+      <div class="contact-form">
+        <h3>Обратная связь</h3>
+        <form action="#">
+          <input type="text" class="input" placeholder="Фио" />
+          <input type="tel" class="input masked" placeholder="+7 (___) ___-__-__" />
+          <input type="email" class="input" placeholder="E-mail" />
+          <textarea class="textarea" placeholder="Коментарий"></textarea>
+          <label class="checkbox">
+            <input type="checkbox" />
+            <p>Согласен на обработку персональных данных</p>
+          </label>
+          <button class="btn btn-green"><p>Отправить</p></button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-map"><script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A8e60ed5bd1f31f2f2342ad351c218f320a132cef2f909e921fed19aac7caa4f9&amp;width=500&amp;height=400&amp;lang=ru_RU&amp;scroll=false"></script></section>
+
+{% endblock %}

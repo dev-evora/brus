@@ -120,6 +120,18 @@ body
   padding: 0 20px
   font-size: 14px
   font-weight: 700
+  display: block
+  @include placeholder
+    color: #c5c5c5
+
+.textarea
+  width: 100%
+  height: 85px
+  border: 1px solid $color-black
+  padding: 12px 20px
+  font-size: 14px
+  font-weight: 700
+  display: block
   @include placeholder
     color: #c5c5c5
 
@@ -146,3 +158,27 @@ body
       background: url(../img/svg/pagination-arrow.svg) no-repeat
   &-next a
     transform: rotate(180deg)
+
+.checkbox
+  cursor: pointer
+  display: block
+  input
+    @include visually-hidden
+    &:checked + p::before
+      background: $color-green
+  p
+    position: relative
+    font-weight: 700
+    font-size: 14px
+    line-height: 1
+    padding-left: 24px
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      width: 14px
+      height: 14px
+      border: 1px solid $color-black
+      box-shadow: inset 0 0 0 2px #fff
+      transition: .2s
