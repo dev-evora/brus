@@ -119,3 +119,16 @@ $('.catalog-section__grid div').click(function () {
     $('.catalog-section__result').removeClass('catalog-section__simple');
   }
 });
+
+$('.order-delivery__type input').click(function () {
+  const type = $(this).attr('data-type');
+
+  $('.order-delivery__address-item').removeClass('active');
+  $('.order-delivery__address-item[data-type=' + type + ']').addClass('active');
+});
+
+$('.order-toggle').click(function () {
+  $(this).toggleClass('entity');
+  $('#entity').toggle();
+  $('#individual').toggle();
+});

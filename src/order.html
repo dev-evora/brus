@@ -1,0 +1,149 @@
+{% extends 'components/_layout.html' %}
+{% set site_title = 'Ваш заказ' %}
+{% set header_white = false %}
+
+{% block content %}
+
+<section class="head">
+  <div class="container">
+    <ul class="head-breadcrumbs">
+      <li><a href="#">Главная</a></li>
+      <li><a href="#">Ваш заказ</a></li>
+    </ul>
+    <h2 class="title-lg head-title">Ваш заказ</h2>
+    <h3 class="title-sm head-subtitle">Отправьте нам заявку, и мы предоставим вам<br> актуальную стоимость по вашей смете в течение 2 часов</h3>
+  </div>
+</section>
+
+<section class="order">
+  <div class="container">
+    <div class="order-row">
+      <div class="order-content">
+        <div class="order-title">
+          <h2>1</h2>
+          <h3>Смета</h3>
+        </div>
+        {% include 'components/order-item.html' %}
+        {% include 'components/order-item.html' %}
+        {% include 'components/order-item.html' %}
+        <div class="order-total">
+          <div class="order-total__count">
+            <h4 class="title-sm">Всего в заказе:</h4>
+            <ul class="order-total__count-list">
+              <li>м куб.: 1,03</li>
+              <li>шт.: 23</li>
+              <li>позиции: 4</li>
+            </ul>
+          </div>
+          <div class="order-total__price">
+            <h4 class="title-sm">Общая стоимость заказа:</h4>
+            <h5 class="title-md">309 309 ₽</h5>
+          </div>
+        </div>
+        <div class="order-title">
+          <h2>2</h2>
+          <h3>Доставка</h3>
+        </div>
+        <div class="order-delivery">
+          <div class="order-delivery__type">
+            <h4>Выберите способ доставки</h4>
+            <label class="radio">
+              <input type="radio" name="delivery" value="Самовывоз" data-type="stock" checked />
+              <p>Самовывоз</p>
+            </label>
+            <label class="radio">
+              <input type="radio" name="delivery" value="Доставка" data-type="delivery" />
+              <p>Доставка</p>
+            </label>
+          </div>
+          <div class="order-delivery__address">
+            <div class="order-delivery__address-item active" data-type="stock">
+              <h4>Склад самовывоза</h4>
+              <select class="select">
+                <option disabled selected>Выберите склад самовывоза</option>
+                <option>Склад 1</option>
+                <option>Склад 2</option>
+                <option>Склад 3</option>
+                <option>Склад 4</option>
+              </select>
+              <h4>Самовывоз из любого нашего склада бесплатен</h4>
+            </div>
+            <div class="order-delivery__address-item" data-type="delivery">
+              <h4>Адрес доставки</h4>
+              <textarea class="textarea" placeholder="Введите адрес"></textarea>
+              <h4>Стоимость доставки будет рассчитана нашим специалистом, когда он свяжется с вами</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="order-sidebar">
+        <div class="order-title">
+          <h2>3</h2>
+          <h3>Контактные данные</h3>
+        </div>
+        <form action="#" class="order-form">
+          <div class="order-toggle">
+            <div class="order-toggle__name">Физическое<br> лицо</div>
+            <div class="order-toggle__icon"></div>
+            <div class="order-toggle__name">Юридическое<br> лицо</div>
+          </div>
+          <div id="entity" style="display: none;">
+            <input type="text" class="input" placeholder="Наименование компании" />
+            <input type="text" class="input" placeholder="Представитель" />
+          </div>
+          <div id="individual">
+            <input type="text" class="input" placeholder="Фио" />
+          </div>
+          <input type="tel" class="input masked" placeholder="+7 (___) ___-__-__" />
+          <input type="email" class="input" placeholder="E-mail" />
+          <div class="order-ask order-ask__flex">
+            <h4>Как удобнее с вами связаться?</h4>
+            <label class="radio">
+              <input type="radio" name="contact" value="WhatsApp" checked />
+              <p>WhatsApp</p>
+            </label>
+            <label class="radio">
+              <input type="radio" name="contact" value="Telegram" />
+              <p>Telegram</p>
+            </label>
+            <label class="radio">
+              <input type="radio" name="contact" value="Телефон" />
+              <p>Телефон</p>
+            </label>
+            <label class="radio">
+              <input type="radio" name="contact" value="E-mail" />
+              <p>E-mail</p>
+            </label>
+          </div>
+          <div class="order-ask">
+            <h4>Когда нужен заказ?</h4>
+            <label class="radio">
+              <input type="radio" name="time" value="Срочно (1-5 раб. дней)" checked />
+              <p>Срочно (1-5 раб. дней)</p>
+            </label>
+            <label class="radio">
+              <input type="radio" name="time" value="Не срочно (6-15 раб. дней)" />
+              <p>Не срочно (6-15 раб. дней)</p>
+            </label>
+            <label class="radio">
+              <input type="radio" name="time" value="В перспективе (16-45 раб. дней)" />
+              <p>В перспективе (16-45 раб. дней)</p>
+            </label>
+            <label class="radio">
+              <input type="radio" name="time" value="С датой определюсь позже" />
+              <p>С датой определюсь позже</p>
+            </label>
+          </div>
+          <textarea class="textarea" placeholder="Коментарий"></textarea>
+          <label class="checkbox">
+            <input type="checkbox" />
+            <p>Согласен на обработку персональных данных</p>
+          </label>
+          <button class="btn btn-green"><p>Отправить заявку</p></button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

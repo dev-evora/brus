@@ -182,3 +182,39 @@ body
       border: 1px solid $color-black
       box-shadow: inset 0 0 0 2px #fff
       transition: .2s
+
+.radio
+  cursor: pointer
+  display: block
+  input
+    @include visually-hidden
+    &:checked + p::before
+      background: $color-green
+  p
+    position: relative
+    font-weight: 700
+    font-size: 14px
+    line-height: 1
+    padding-left: 24px
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      width: 14px
+      height: 14px
+      border: 1px solid $color-black
+      box-shadow: inset 0 0 0 2px #fff
+      transition: .2s
+      border-radius: 9999px
+
+.select
+  height: 42px
+  border: 1px solid $color-brown
+  -webkit-appearance: none
+  padding-left: 20px
+  font-size: 14px
+  font-weight: 700
+  margin-right: 20px
+  background: #fff url(../img/svg/select-arrow.svg) no-repeat right 11px center
+  width: 100%

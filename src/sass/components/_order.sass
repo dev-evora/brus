@@ -1,0 +1,170 @@
+.order
+  padding-top: 80px
+  &-row
+    @include flexbox
+    align-items: flex-start
+  &-content
+    max-width: 800px
+    width: calc(100% - 290px)
+  &-sidebar
+    max-width: 290px
+    margin-left: auto
+    width: 100%
+  &-title
+    @include flexbox
+    align-items: center
+    font-weight: 700
+    h2
+      font-size: 32px
+    h3
+      font-size: 24px
+      margin-left: 15px
+  &-total
+    @include flexbox
+    align-items: flex-start
+    justify-content: space-between
+    margin: 40px 0
+    padding-bottom: 40px
+    border-bottom: 1px solid $color-black
+    &__count
+      &-list
+        @include flexbox
+        align-items: center
+        li
+          margin-right: 25px
+          margin-top: 5px
+          font-size: 14px
+          font-weight: 700
+          &:last-child
+            margin-right: 0
+    &__price
+      .title-md
+        margin-top: 5px
+        text-align: right
+  &-form
+    margin-top: 20px
+    .input, .textarea
+      margin-bottom: 20px
+    .btn-green
+      margin-top: 20px
+      padding: 15px 25px
+
+  &-ask
+    margin-bottom: 20px
+    h4
+      font-size: 14px
+      line-height: 1
+      font-weight: 700
+    .radio
+      margin-top: 15px
+    &__flex
+      @include flexbox
+      align-items: flex-start
+      h4
+        width: 100%
+      .radio
+        width: 50%
+
+  &-delivery
+    margin-top: 20px
+    @include flexbox
+    align-items: flex-start
+    justify-content: space-between
+    h4
+      font-size: 14px
+      font-weight: 700
+      line-height: 1
+      width: 100%
+      margin-bottom: 10px
+      margin-top: 10px
+      &:first-child
+        margin-top: 0
+    &__type
+      @include flexbox
+      align-items: flex-start
+      .radio
+        margin-top: 10px
+        margin-right: 20px
+        &:last-child
+          margin-right: 0
+    &__address
+      max-width: 290px
+      width: 100%
+      margin-right: 100px
+      &-item
+        display: none
+        &.active
+          display: block
+
+  &-item
+    margin-top: 20px
+    border: 1px solid $color-gray
+    padding: 20px
+    position: relative
+    @include flexbox
+    align-items: flex-start
+    &__left
+      max-width: 300px
+      width: 100%
+      margin-right: 20px
+    &__calc
+      flex: 1
+      .catalog-item__calc
+        margin-top: 0
+      &-total
+        font-size: 14px
+        line-height: 1
+        font-weight: 700
+        margin-top: 20px
+        color: $color-brown
+        b
+          font-size: 32px
+          padding-left: 10px
+    &__delete
+      margin-left: 20px
+      width: 16px
+      height: 15px
+      background: url(../img/svg/trash-black.svg) no-repeat
+      cursor: pointer
+
+  &-toggle
+    @include flexbox
+    align-items: center
+    margin-bottom: 20px
+    &__name
+      font-size: 14px
+      font-weight: 700
+      line-height: 1
+      color: $color-gray
+      cursor: pointer
+      transition: .2s
+      &:first-child
+        color: $color-green
+    &__icon
+      margin: 0 20px
+      height: 24px
+      width: 46px
+      background: #fff
+      border: 1px solid $color-green
+      border-radius: 9999px
+      position: relative
+      box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.1)
+      cursor: pointer
+      &::before
+        content: ''
+        position: absolute
+        top: 2px
+        left: 2px
+        width: 18px
+        height: 18px
+        border-radius: 100%
+        background: $color-green
+        transition: .2s
+    &.entity
+      .order-toggle__name
+        &:first-child
+          color: $color-gray
+        &:last-child
+          color: $color-green
+      .order-toggle__icon::before
+        left: 24px
