@@ -12,9 +12,11 @@
     width: 160px
     height: 50px
     background: url(../img/svg/logo-black.svg) no-repeat
+    margin-right: 0
   &-nav
     @include flexbox
     align-items: center
+    margin-left: 100px
     li
       margin-right: 80px
       &:last-child
@@ -44,6 +46,7 @@
   &-phone
     font-size: 18px
     font-weight: 700
+    margin: 0 auto
   &-buttons
     @include flexbox
     align-items: center
@@ -162,3 +165,48 @@
       h4
         color: $color-green
         padding-top: 1px
+
+  &-catalog
+    position: absolute
+    background: #fff
+    color: $color-black
+    top: 71px
+    left: 230px
+    padding: 40px
+    font-size: 18px
+    font-weight: 700
+    width: 720px
+    display: none
+    li
+      margin-top: 20px
+      &:first-child
+        margin-top: 0
+      a
+        transition: .2s
+        &:hover
+          color: $color-green
+    &__icon
+      width: 18px
+      height: 16px
+      background: url(../img/svg/catalog.svg) no-repeat
+      margin-right: 10px
+      margin-top: -4px
+      display: inline-block
+      vertical-align: middle
+    &__row
+      @include flexbox
+    &__main
+      padding-right: 40px
+      border-right: 1px solid $color-gray
+      width: 320px
+      li.active a
+        color: $color-green
+    &__sub
+      padding-left: 40px
+      flex: 1
+      display: none
+
+.js-catalog.active a
+  color: #fff
+  &::before
+    opacity: 1
