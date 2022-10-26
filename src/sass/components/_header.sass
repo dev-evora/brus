@@ -1,6 +1,8 @@
 .header
   padding: 20px 0
   border-bottom: 1px solid rgba(31, 23, 18, .1)
+  position: relative
+  z-index: 9999
   .container
     @include flexbox
     align-items: center
@@ -20,6 +22,25 @@
       a
         font-size: 18px
         font-weight: 700
+        position: relative
+        height: 24px
+        display: block
+        transition: color .2s
+        &::before
+          content: ''
+          position: absolute
+          top: -33px
+          left: -40px
+          right: -40px
+          bottom: -33px
+          background: $color-green
+          opacity: 0
+          transition: .2s
+          z-index: -1
+        &:hover
+          color: #fff
+          &::before
+            opacity: 1
   &-phone
     font-size: 18px
     font-weight: 700
@@ -33,6 +54,7 @@
       background: rgba(0,0,0,.5)
       border: 1px solid rgba(255,255,255,.5)
       margin-left: 10px
+      transition: .2s
       &:first-child
         margin-left: 0
       &::before
@@ -42,16 +64,24 @@
         display: block
         background-repeat: no-repeat
         background-position: center center
+        transition: .2s
+      &:hover
+        background: $color-green
+        border-color: rgba(255,255,255,.5)
     &__search
       background: transparent
       border-color: transparent
       &::before
         background-image: url(../img/svg/search-black.svg)
+      &:hover::before
+        background-image: url(../img/svg/search-white.svg)
     &__wishlist
       background: transparent
       border-color: transparent
       &::before
         background-image: url(../img/svg/wishlist-black.svg)
+      &:hover::before
+        background-image: url(../img/svg/wishlist-white.svg)
     &__cart
       &::before
         background-image: url(../img/svg/cart-white.svg)
@@ -70,3 +100,65 @@
       background-image: url(../img/svg/search-white.svg)
     .header-buttons__wishlist::before
       background-image: url(../img/svg/wishlist-white.svg)
+
+  &-cart
+    position: absolute
+    z-index: 9999
+    top: 50px
+    right: 10px
+    padding: 20px
+    color: $color-black
+    width: 390px
+    display: none
+    &::after
+      content: ''
+      position: absolute
+      top: 0
+      right: 0
+      width: 50px
+      height: 21px
+      background-image: url("data:image/svg+xml,%3Csvg width='50' height='21' viewBox='0 0 50 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M25 11L31 21H19L25 11Z' fill='white'/%3E%3C/svg%3E")
+    &::before
+      content: ''
+      position: absolute
+      bottom: 0
+      left: 0
+      right: 0
+      top: 21px
+      background: #fff
+      z-index: -1
+      box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.15)
+    &__item
+      padding: 20px 0
+      border-bottom: 1px solid #CDCDCD
+      @include flexbox
+      align-items: flex-start
+      &:last-child
+        padding-bottom: 0
+        border: 0
+    &__name
+      flex: 1
+      h3
+        font-size: 18px
+        font-weight: 700
+        display: -webkit-box
+        -webkit-line-clamp: 1
+        -webkit-box-orient: vertical
+        overflow: hidden
+      h4
+        font-size: 14px
+        padding-top: 3px
+        display: -webkit-box
+        -webkit-line-clamp: 1
+        -webkit-box-orient: vertical
+        overflow: hidden
+    &__total
+      font-size: 16px
+      font-weight: 700
+      width: 70px
+      margin-left: 10px
+      h3
+        padding-top: 2px
+      h4
+        color: $color-green
+        padding-top: 1px

@@ -132,3 +132,11 @@ $('.order-toggle').click(function () {
   $('#entity').toggle();
   $('#individual').toggle();
 });
+
+$('.header-buttons__cart').hover(function () {
+  $('.header-cart').slideDown(200);
+});
+
+$('.header').mouseleave(function () {
+  $('.header-cart').slideUp(200);
+});
