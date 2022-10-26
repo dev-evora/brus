@@ -39,12 +39,7 @@ body
     font-weight: 700
     text-transform: uppercase
     &::after
-      content: ''
-      width: 18px
-      height: 14px
       background: url(../img/svg/btn-arrow.svg) no-repeat
-      display: block
-      margin-left: 10px
   &-outline
     background: #fff
     border-color: $color-brown
@@ -56,12 +51,18 @@ body
     font-weight: 700
     text-transform: uppercase
     &::after
-      content: ''
-      width: 18px
-      height: 14px
       background: url(../img/svg/btn-arrow-brown.svg) no-repeat
-      display: block
-      margin-left: 10px
+  &::after
+    content: ''
+    width: 18px
+    height: 14px
+    display: block
+    margin-left: 10px
+    right: 0
+    position: relative
+    transition: .2s
+  &:hover::after
+    right: -6px
 
 .btn-hero
   padding: 20px 60px
