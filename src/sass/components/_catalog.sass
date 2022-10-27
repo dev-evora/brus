@@ -257,6 +257,25 @@
       @include flexbox
       align-items: center
       margin-top: 40px
+      &-btn
+        height: 40px
+        width: 140px
+        @include flexbox
+        align-items: center
+        justify-content: center
+        border: 1px solid $color-gray
+        font-weight: 700
+        font-size: 14px
+        line-height: 1
+        margin-left: auto
+        display: none
+        &::before
+          content: ''
+          width: 20px
+          height: 18px
+          background: url(../img/svg/filter.svg) no-repeat
+          display: block
+          margin-right: 10px
       &-select
         flex: 1
         height: 42px

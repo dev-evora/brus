@@ -1,3 +1,137 @@
 @media (max-width: 1023px)
   .container
     max-width: 768px
+
+  .header-nav
+    display: none
+  .header-phone
+    display: none
+
+  .header-buttons__search,
+  .header-buttons__wishlist
+    background: rgba(0,0,0,.5)
+    border: 1px solid rgba(255,255,255,.5)
+
+  .header-buttons__search::before
+    background-image: url(../img/svg/search-white.svg)
+  .header-buttons__wishlist::before
+    background-image: url(../img/svg/wishlist-white.svg)
+
+  .header-buttons__burger
+    display: block
+
+  .hero-title
+    font-size: 72px
+
+  .hero
+    padding-top: 190px
+    height: 700px
+    margin-bottom: 90px
+
+  .hero-consult
+    border: 10px solid #fff
+    padding: 20px
+    margin-top: 60px
+
+  .btn-consult
+    padding: 16px 30px
+
+  .promo-item
+    padding: 35px
+
+  .benefit-item__text
+    left: 30px
+    bottom: 30px
+    right: 30px
+  .benefit-item
+    height: 300px
+
+  .product-item__img
+    padding: 15px
+    height: 180px
+  .product-item__title
+    font-size: 18px
+    margin-top: 10px
+
+  .spruce-img
+    width: 100%
+  .spruce-img img
+    left: 30px
+    width: calc(100% - 30px)
+  .spruce-img::before
+    top: 30px
+    right: 30px
+    left: 0
+    bottom: -30px
+
+  .cta-content
+    max-width: 100%
+  .cta-img
+    width: 100%
+    order: 1
+    margin-top: 40px
+    img
+      right: 0
+      float: initial
+      width: 100%
+
+  .help-block
+    padding: 40px
+  .help-text h2
+    font-size: 64px
+  .help-text
+    margin-bottom: 30px
+
+  .catalog-section__item,
+  .catalog-section__result .catalog-item
+    width: calc(100% / 2 - 20px)
+
+  .catalog-section__grid
+    display: none
+  .catalog-section__sort
+    margin-left: 0
+  .catalog-section__filter
+    display: none
+
+  .catalog-section__filter-btn
+    display: flex
+
+  .catalog-section__result
+    margin-top: 0
+  .catalog-section__subfilter
+    margin-top: 20px
+
+  .contact-form
+    position: relative
+    padding: 0
+    margin-top: 40px
+
+  .item-photo
+    max-width: 100%
+    width: 100%
+  .item-info
+    width: 100%
+    margin-top: 40px
+
+  .item-spec__list
+    width: calc(100% / 2 - 20px)
+
+  .price-table__col,
+  .price-table__row:first-child .price-table__col:first-child,
+  .price-table__col:first-child,
+  .price-table__section
+    font-size: 14px
+    padding: 10px 10px 12px
+  .price-table__col
+    width: 100px
+
+  .order-item__calc
+    width: 100%
+    flex: initial
+    margin-top: 20px
+  .order-item__delete
+    position: absolute
+    top: 20px
+    right: 20px
+  .order-delivery__type
+    margin-bottom: 20px

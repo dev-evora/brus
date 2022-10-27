@@ -45,8 +45,8 @@ const promoSlider = new Swiper('.promo-slider', {
 });
 
 const specialSlider = new Swiper('.special-slider', {
-  slidesPerView: 3,
-  slidesPerGroup: 3,
+  slidesPerView: 1,
+  slidesPerGroup: 1,
   spaceBetween: 20,
   pagination: {
     el: '.special-count',
@@ -58,6 +58,16 @@ const specialSlider = new Swiper('.special-slider', {
   },
   noSwiping: true,
   noSwipingClass: 'swiper-slide',
+  breakpoints: {
+    1024: {
+      slidesPerView: 3,
+      slidesPerGroup: 3,
+    },
+    768: {
+      slidesPerView: 2,
+      slidesPerGroup: 2,
+    },
+  },
 });
 
 const benefitSlider = new Swiper('.benefit-slider', {
