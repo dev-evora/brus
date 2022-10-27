@@ -71,7 +71,7 @@ const specialSlider = new Swiper('.special-slider', {
 });
 
 const benefitSlider = new Swiper('.benefit-slider', {
-  slidesPerView: 2,
+  slidesPerView: 1,
   spaceBetween: 20,
   pagination: {
     el: '.benefit-count',
@@ -80,6 +80,11 @@ const benefitSlider = new Swiper('.benefit-slider', {
   navigation: {
     nextEl: '.benefit-next',
     prevEl: '.benefit-prev',
+  },
+  breakpoints: {
+    768: {
+      slidesPerView: 2,
+    },
   },
 });
 
