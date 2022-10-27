@@ -56,8 +56,6 @@ const specialSlider = new Swiper('.special-slider', {
     nextEl: '.special-next',
     prevEl: '.special-prev',
   },
-  noSwiping: true,
-  noSwipingClass: 'swiper-slide',
   breakpoints: {
     1024: {
       slidesPerView: 3,
@@ -66,6 +64,10 @@ const specialSlider = new Swiper('.special-slider', {
     768: {
       slidesPerView: 2,
       slidesPerGroup: 2,
+    },
+    576: {
+      noSwiping: true,
+      noSwipingClass: 'swiper-slide',
     },
   },
 });
