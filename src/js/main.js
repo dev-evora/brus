@@ -189,3 +189,7 @@ $('.header-buttons__burger, .header-burger__close').click(function () {
   $('.header-burger').fadeToggle(200);
   $('body').toggleClass('overflow');
 });
+
+$('.catalog-section__filter-btn').click(function () {
+  $('.catalog-section__filter').slideToggle();
+});
