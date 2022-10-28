@@ -178,3 +178,14 @@ if ($('body').width() >= 1024) {
     $(this).addClass('active');
   });
 }
+
+$('.js-open-menu').one('click', false);
+
+$('.js-open-menu').click(function () {
+  $(this).next('.header-burger__submenu').slideDown(200);
+});
+
+$('.header-buttons__burger, .header-burger__close').click(function () {
+  $('.header-burger').fadeToggle(200);
+  $('body').toggleClass('overflow');
+});
