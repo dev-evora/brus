@@ -1,0 +1,35 @@
+{#
+  data-thickness - толщина
+  data-width - ширина
+  data-length - длина
+  data-usable-width - полезная ширина
+  data-price - цена за штуку
+#}
+<form class="catalog-item__calc js-calc__form"
+  data-thickness="45"
+  data-width="195"
+  data-length="6000"
+  data-usable-width="120"
+  data-price="129"
+>
+  <h4>Посчитать, сколько нужно:</h4>
+  <label class="catalog-item__calc-label">
+    <input type="number" data-type="square" placeholder="?" />
+    <p>м.кв.</p>
+  </label>
+  <div class="catalog-item__calc-equals">=</div>
+  <label class="catalog-item__calc-label">
+    <input type="number" data-type="cubic" placeholder="?" />
+    <p>м.куб.</p>
+  </label>
+  <div class="catalog-item__calc-equals">=</div>
+  <label class="catalog-item__calc-label">
+    <input type="number" data-type="running" placeholder="?" />
+    <p>пог.м.</p>
+  </label>
+  <div class="catalog-item__calc-equals">=</div>
+  <label class="catalog-item__calc-label">
+    <input type="number" data-type="pieces" placeholder="?" />
+    <p>шт.</p>
+  </label>
+</form>

@@ -56,6 +56,8 @@ const specialSlider = new Swiper('.special-slider', {
     nextEl: '.special-next',
     prevEl: '.special-prev',
   },
+  noSwiping: true,
+  noSwipingClass: 'swiper-slide',
   breakpoints: {
     1024: {
       slidesPerView: 3,
@@ -67,7 +69,6 @@ const specialSlider = new Swiper('.special-slider', {
     },
     576: {
       noSwiping: true,
-      noSwipingClass: 'swiper-slide',
     },
   },
 });
@@ -192,4 +193,61 @@ $('.header-buttons__burger, .header-burger__close').click(function () {
 
 $('.catalog-section__filter-btn').click(function () {
   $('.catalog-section__filter').slideToggle();
+});
+
+$('.js-calc').each(function (i, item) {
+  const formCalc = $(item).find('.js-calc__form');
+
+  const thickness = formCalc.data('thickness') / 1000;
+  const width = formCalc.data('width') / 1000;
+  const length = formCalc.data('length') / 1000;
+  const usableWidth = formCalc.data('usable-width') / 1000;
+  const effectiveArea = usableWidth * length;
+
+  const price = formCalc.data('price');
+
+  $('input', formCalc).on('keyup', function () {
+    const inputValue = $(this).val();
+    const inputType = $(this).data('type');
+
+    const squareFormula = usableWidth * length;
+    const cubicFormula = (squareFormula / effectiveArea) * thickness * width * length;
+    const runningFormula = ((inputValue * cubicFormula) / length).toFixed(2);
+    const piecesFormula = Math.ceil(inputValue / cubicFormula);
+
+    switch (inputType) {
+      case 'square':
+        $('input[data-type=cubic]', item).val((Math.ceil(inputValue / (width * length)) * cubicFormula).toFixed(2));
+        $('input[data-type=running]', item).val((Math.ceil(inputValue / (width * length)) * length).toFixed(2));
+        $('input[data-type=pieces]', item).val(Math.ceil(inputValue / (width * length)));
+        break;
+      case 'cubic':
+        $('input[data-type=square]', item).val((width * length * piecesFormula).toFixed(2));
+        $('input[data-type=running]', item).val(piecesFormula * length);
+        $('input[data-type=pieces]', item).val(piecesFormula);
+        break;
+      case 'running':
+        $('input[data-type=square]', item).val((width * length * Math.ceil(runningFormula / cubicFormula)).toFixed(2));
+        $('input[data-type=cubic]', item).val(runningFormula);
+        $('input[data-type=pieces]', item).val(Math.ceil(runningFormula / cubicFormula));
+        break;
+      case 'pieces':
+        $('input[data-type=square]', item).val((width * length * inputValue).toFixed(2));
+        $('input[data-type=cubic]', item).val((inputValue * cubicFormula).toFixed(2));
+        $('input[data-type=running]', item).val((inputValue * length).toFixed(2));
+        break;
+    }
+
+    $('.js-calc__total', item).text(triplets(price * $('input[data-type=pieces]', item).val()));
+
+    if ($('input[data-type=pieces]', item).val() === '0' || $('input[data-type=pieces]', item).val() === '') {
+      $(item).removeClass('focus');
+      $('input[data-type=square]', item).val('');
+      $('input[data-type=cubic]', item).val('');
+      $('input[data-type=running]', item).val('');
+      $('input[data-type=pieces]', item).val('');
+    } else {
+      $(item).addClass('focus');
+    }
+  });
 });

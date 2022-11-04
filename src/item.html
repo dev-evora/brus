@@ -21,30 +21,9 @@
       <div class="item-photo"><img src="img/item-photo.jpg" alt=""></div>
       <div class="item-info">
         {% include 'components/catalog-item__info.html' %}
-        <div class="item-calc">
-          <div class="catalog-item__calc">
-            <h4>Посчитать, сколько нужно:</h4>
-            <label class="catalog-item__calc-label">
-              <input type="number" placeholder="?" />
-              <p>м.кв.</p>
-            </label>
-            <div class="catalog-item__calc-equals">=</div>
-            <label class="catalog-item__calc-label">
-              <input type="number" placeholder="?" />
-              <p>м.куб.</p>
-            </label>
-            <div class="catalog-item__calc-equals">=</div>
-            <label class="catalog-item__calc-label">
-              <input type="number" placeholder="?" />
-              <p>пог.м.</p>
-            </label>
-            <div class="catalog-item__calc-equals">=</div>
-            <label class="catalog-item__calc-label">
-              <input type="number" placeholder="?" />
-              <p>шт.</p>
-            </label>
-          </div>
-          <div class="item-calc__total"><p><b>За позицию:</b><span>15 009 ₽</span></p></div>
+        <div class="item-calc js-calc">
+          {% include 'components/catalog-item__calc.html' %}
+          <div class="item-calc__total"><p><b>За позицию:</b><span><i class="js-calc__total">0</i> ₽</span></p></div>
         </div>
         <a href="#" class="btn btn-green"><p>В смету</p></a>
       </div>

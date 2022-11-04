@@ -1,28 +1,7 @@
-<div class="catalog-item">
+<div class="catalog-item js-calc">
   {% include 'components/catalog-item__info.html' %}
-  <div class="catalog-item__calc">
-    <h4>Посчитать, сколько нужно:</h4>
-    <label class="catalog-item__calc-label">
-      <input type="number" placeholder="?" />
-      <p>м.кв.</p>
-    </label>
-    <div class="catalog-item__calc-equals">=</div>
-    <label class="catalog-item__calc-label">
-      <input type="number" placeholder="?" />
-      <p>м.куб.</p>
-    </label>
-    <div class="catalog-item__calc-equals">=</div>
-    <label class="catalog-item__calc-label">
-      <input type="number" placeholder="?" />
-      <p>пог.м.</p>
-    </label>
-    <div class="catalog-item__calc-equals">=</div>
-    <label class="catalog-item__calc-label">
-      <input type="number" placeholder="?" />
-      <p>шт.</p>
-    </label>
-  </div>
-  {# <div class="catalog-item__result">Итоговая стоимость <b><span class="triplets">0</span> ₽</b></div> #}
+  {% include 'components/catalog-item__calc.html' %}
+  <div class="catalog-item__result">Итоговая стоимость <b><span class="js-calc__total">0</span> ₽</b></div>
   <div class="btn-wrap catalog-item__buttons">
     <a href="#" class="btn btn-outline"><p>Подробнее</p></a>
     <a href="#" class="btn btn-green"><p>В смету</p></a>
