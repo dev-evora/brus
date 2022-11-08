@@ -7,19 +7,11 @@
   <div class="catalog-item__size">45<span>х</span>195<span>х</span>6000</div>
   <a href="#" class="catalog-item__title">Имитация (имитатор) бруса</a>
   <div class="catalog-item__subtitle">Карельский профиль</div>
-  <div class="catalog-item__desc">Полезная ширина 177</div>
+  {# если нет полезной ширины, то она равная ширине #}
+  <div class="catalog-item__desc">Полезная ширина 185</div>
 </div>
 <ul class="catalog-item__price">
-  <li>
-    <b><span class="triplets">3229</span>₽</b>
-    <p>за м.кв</p>
-  </li>
-  <li>
-    <b><span class="triplets">30229</span>₽</b>
-    <p>за м.куб.</p>
-  </li>
-  <li>
-    <b><span class="triplets">129</span>₽</b>
-    <p>за шт.</p>
-  </li>
+  <li><b><span class="catalog-item__price-square"></span>₽</b><p>за м.кв</p></li>
+  <li><b><span class="catalog-item__price-cubic"></span>₽</b><p>за м.куб.</p></li>
+  <li><b><span class="catalog-item__price-pieces"></span>₽</b><p>за шт.</p></li>
 </ul>
