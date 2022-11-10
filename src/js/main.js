@@ -212,8 +212,8 @@ $('.js-calc').each(function (i, item) {
 
   const price = formCalc.data('price');
   $('.catalog-item__price-pieces', item).text(triplets(price));
-  $('.catalog-item__price-square', item).text(triplets((price / squareFormula).toFixed(2)));
-  $('.catalog-item__price-cubic', item).text(triplets((price / cubicFormula).toFixed(2)));
+  $('.catalog-item__price-square', item).text(triplets((price / squareFormula).toFixed()));
+  $('.catalog-item__price-cubic', item).text(triplets((price / cubicFormula).toFixed()));
 
   $('input', formCalc).on('keyup', function () {
     const inputValue = $(this).val();
@@ -222,40 +222,38 @@ $('.js-calc').each(function (i, item) {
     const runningFormula = ((inputValue * cubicFormula) / length).toFixed(2);
     const piecesFormula = Math.ceil(inputValue / cubicFormula);
 
-    const squareTotalFormula = (squareFormula / effectiveArea) * thickness * width * length;
-
     const diff = scoringWidth * length - usableWidth * length;
     let diffTotal = 1;
     diff === scoringWidth * length ? (diffTotal = 0) : (diffTotal = Number(diff.toFixed(2)));
 
-    // console.log(diffTotal);
-
     switch (inputType) {
       case 'square':
-        $('input[data-type=cubic]', item).val((Math.ceil(inputValue / squareFormula) * cubicFormula).toFixed(2));
-        $('input[data-type=running]', item).val((Math.ceil(inputValue / squareFormula) * length).toFixed(2));
-        $('input[data-type=pieces]', item).val(Math.ceil(inputValue / squareFormula));
+        $('input[data-type=cubic]', item).val((Math.ceil(inputValue / squareFormula) * cubicFormula).toFixed(2).replace(/[,.]?0+$/, ''));
+        $('input[data-type=running]', item).val((Math.ceil(inputValue / squareFormula) * length).toFixed(2).replace(/[,.]?0+$/, ''));
+        $('input[data-type=pieces]', item).val(Math.ceil(inputValue / squareFormula).replace(/[,.]?0+$/, ''));
         break;
       case 'cubic':
-        $('input[data-type=square]', item).val((squareFormula.toFixed(2) * piecesFormula).toFixed(2));
-        $('input[data-type=running]', item).val(piecesFormula * length);
-        $('input[data-type=pieces]', item).val(piecesFormula);
+        $('input[data-type=square]', item).val((squareFormula.toFixed(2) * piecesFormula).toFixed(2).replace(/[,.]?0+$/, ''));
+        $('input[data-type=running]', item).val((piecesFormula * length).replace(/[,.]?0+$/, ''));
+        $('input[data-type=pieces]', item).val(piecesFormula.replace(/[,.]?0+$/, ''));
         break;
       case 'running':
-        $('input[data-type=square]', item).val((squareFormula.toFixed(2) * Math.ceil(runningFormula / cubicFormula)).toFixed(2));
-        $('input[data-type=cubic]', item).val(runningFormula);
-        $('input[data-type=pieces]', item).val(Math.ceil(runningFormula / cubicFormula));
+        $('input[data-type=square]', item).val(
+          (squareFormula.toFixed(2) * Math.ceil(runningFormula / cubicFormula)).toFixed(2).replace(/[,.]?0+$/, '')
+        );
+        $('input[data-type=cubic]', item).val(runningFormula.replace(/[,.]?0+$/, ''));
+        $('input[data-type=pieces]', item).val(Math.ceil(runningFormula / cubicFormula).replace(/[,.]?0+$/, ''));
         break;
       case 'pieces':
-        $('input[data-type=square]', item).val((squareFormula.toFixed(2) * inputValue).toFixed(2));
-        $('input[data-type=cubic]', item).val((inputValue * cubicFormula).toFixed(2));
-        $('input[data-type=running]', item).val((inputValue * length).toFixed(2));
+        $('input[data-type=square]', item).val((squareFormula.toFixed(2) * inputValue).toFixed(2).replace(/[,.]?0+$/, ''));
+        $('input[data-type=cubic]', item).val((inputValue * cubicFormula).toFixed(2).replace(/[,.]?0+$/, ''));
+        $('input[data-type=running]', item).val((inputValue * length).toFixed(2).replace(/[,.]?0+$/, ''));
         break;
     }
 
     $('.js-calc__total', item).text(triplets(price * $('input[data-type=pieces]', item).val()));
 
-    if ($('input[data-type=pieces]', item).val() === '0' || $('input[data-type=pieces]', item).val() === '') {
+    if ($('input[data-type=pieces]', item).val() === '') {
       $(item).removeClass('focus');
       $('input[data-type=square]', item).val('');
       $('input[data-type=cubic]', item).val('');
