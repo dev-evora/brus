@@ -242,7 +242,7 @@ $('.js-calc').each(function (i, item) {
           (squareFormula.toFixed(2) * Math.ceil(runningFormula / cubicFormula)).toFixed(2).replace(/[,.]?0+$/, '')
         );
         $('input[data-type=cubic]', item).val(runningFormula.replace(/[,.]?0+$/, ''));
-        $('input[data-type=pieces]', item).val(Math.ceil(runningFormula / cubicFormula).replace(/[,.]?0+$/, ''));
+        $('input[data-type=pieces]', item).val(Math.ceil(runningFormula / cubicFormula));
         break;
       case 'pieces':
         $('input[data-type=square]', item).val((squareFormula.toFixed(2) * inputValue).toFixed(2).replace(/[,.]?0+$/, ''));
