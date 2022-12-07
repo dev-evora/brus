@@ -251,4 +251,18 @@ $('.js-calc').each(function (i, item) {
       $(item).addClass('focus');
     }
   });
+
+  if ($(item).hasClass('js-default-value')) {
+    const defaultCubicPieces = Math.ceil(1 / cubicFormula);
+    const defaultCubicSquare = (squareFormula.toFixed(2) * Math.ceil(1 / cubicFormula)).toFixed(2).replace(/[,.]?0+$/, '');
+    const defaultCubicRunnig = Math.ceil(1 / cubicFormula) * length;
+
+    $('.default-cubic').text(`${defaultCubicPieces} шт. | ${defaultCubicSquare} м.кв. | ${defaultCubicRunnig} м.пог.`);
+
+    const defaultPiecesCubic = cubicFormula.toFixed(2).replace(/[,.]?0+$/, '');
+    const defaultPiecesSquare = squareFormula.toFixed(2).replace(/[,.]?0+$/, '');
+    const defaultPiecesRunnig = length.toFixed(2).replace(/[,.]?0+$/, '');
+
+    $('.default-pieces').text(`${defaultPiecesCubic} м.куб. | ${defaultPiecesSquare} м.кв. | ${defaultPiecesRunnig} м.пог.`);
+  }
 });

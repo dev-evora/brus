@@ -19,7 +19,7 @@
   <div class="container">
     <div class="item-card">
       <div class="item-photo"><img src="img/item-photo.jpg" alt=""></div>
-      <div class="item-info js-calc">
+      <div class="item-info js-calc js-default-value">
         {% include 'components/catalog-item__info.html' %}
         <div class="item-calc">
           {% include 'components/catalog-item__calc.html' %}
@@ -37,8 +37,8 @@
       <div class="item-spec__tab active" data-id="1">
         <div class="item-spec__row">
           <ul class="item-spec__list">
-            <li><p>в 1 куб. м.: <b>N шт. | N м.кв. | N м.пог.</b></p></li>
-            <li><p>в 1 шт: <b>N м. куб. | N м.кв. | N м.пог.</b></p></li>
+            <li><p>в 1 куб. м.: <b class="default-cubic"></b></p></li>
+            <li><p>в 1 шт: <b class="default-pieces"></b></p></li>
             <li><p>Вид товара: <b>Стройматериалы</b></p></li>
             <li><p>Тип товара: <b>Пиломатериалы</b></p></li>
           </ul>
